@@ -128,6 +128,18 @@ export default class App extends React.Component {
     });
   };
 
+  
+  handleChangeTitle = event => {
+    this.setState(state => (state.tabs.name = event.target.value))
+    // this.setState({ name:{ ...this.state.tabs.name, name: event.target.value }});
+  };
+
+  // this.setState(state => {
+  //   state.nested.flag = false
+  //   state.another.deep.prop = true
+  //   return state
+  // })
+
   handleContentChange = e => {
     const { tabs, currentTab } = this.state;
 
@@ -173,8 +185,14 @@ export default class App extends React.Component {
               </div>
             ) : (
               <div>
+                <div>
+                  <p>Nom du client</p>
+                  <input onChange={this.handleChangeTitle} type='text'></input>
+                </div>
+                
                 <p>{currentTab.content}</p>
                 <img src="http://via.placeholder.com/640x360"alt='lol'/>
+                
                 {currentTab.id ? (
                   <div
                     style={{ display: "flex", justifyContent: "space-between" }}
