@@ -1,13 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Mytab from './Tabs/tab'
 import Avtab from './Tabs/Avtab'
-
+import Demo from './Drawer/DrawerVentes'
+import AllDrawers from './Drawer/allDrawers'
 function App() {
   return (
     <div>
-      <Mytab/>
+      <AllDrawers/>
+      <Mytab/> 
       
     </div>
   );

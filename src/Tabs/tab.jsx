@@ -198,7 +198,7 @@ export default class App extends React.Component {
               <div>
                 <div>
                   <p>Nom du client</p>
-                  <input value={this.state.tabs.name} onChange={this.handleChangeTitle} type='text'></input>
+                  <input onChange={this.handleChangeTitle} type='text' ></input>
                 </div>
                 
                 <p>{currentTab.content}</p>
