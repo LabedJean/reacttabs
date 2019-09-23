@@ -1,0 +1,14 @@
+.toggleButton{
+    align-self: center;
+    display: flex;
+    justify-content: center
+}
+.drawerContainer{
+    width: 25vh;
+    height: 50 vh;
+}
+.MuiDrawer-paperAnchorLeft{
+    height: 500px !important;
+    left: 75px !important ;
+    top: 150px !important;
+}

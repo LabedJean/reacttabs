@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
@@ -19,23 +18,22 @@ export default function TemporaryDrawer() {
     left: false,
   });
         
-  const toggleDrawer = (side, open) => event => {
+  const toggleDrawerReglements = (side, open) => event => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
 
     setState({ ...state, [side]: open });
   };
-  
 
   const sideList = side => (
     <div className='drawerContainer'
       role="presentation"
-      onClick={toggleDrawer(side, false)}
-      onKeyDown={toggleDrawer(side, false)}
+      onClick={toggleDrawerReglements(side, false)}
+      onKeyDown={toggleDrawerReglements(side, false)}
     >
       <List>
-        {['Devis', 'Bon de livraison', 'Commandes', 'OR' , 'Factures'].map((text, index) => (
+        {['Saisir un réglement', 'Réglement différé', 'Suivit de caisse', 'Bordereau remise chèques'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemText primary={text} />
           </ListItem>
@@ -55,12 +53,8 @@ export default function TemporaryDrawer() {
   
   return (
     <div className='toggleButton'>
-      <Button onClick={toggleDrawer('left', true)}>Saisie des Ventes </Button>
-      <Button onClick={toggleDrawer('left', true)}>Saisie des Règlements </Button>
-      <Button onClick={toggleDrawer('left', true)}>Gestion de caisse </Button>
-      <Button onClick={toggleDrawer('left', true)}>Gestion des fournisseurs </Button>
-      <Button onClick={toggleDrawer('left', true)}>Gestion des stocks </Button>
-      <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
+      <Button onClick={toggleDrawerReglements('left', true)}>Saisie des Règlements </Button>
+      <Drawer open={state.left} onClose={toggleDrawerReglements('left', false)}>
         {sideList('left')}
       </Drawer>
       

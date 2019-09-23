@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import DrawerVentes from './DrawerVentes'
+import DrawerReglements from './DrawerReglements'
 
 
 export default class allDrawers extends Component {
@@ -7,6 +8,7 @@ export default class allDrawers extends Component {
         return (
             <div className="drawersContainer">
             <DrawerVentes/>
+            <DrawerReglements/>
             </div>
         )
     }
